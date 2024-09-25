@@ -10,8 +10,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:video_player/video_player.dart';
-import 'src/interface/video_player_platform_interface.dart';
 import 'package:video_player_platform_interface/video_player_platform_interface.dart';
+
+import 'src/interface/video_player_platform_interface.dart';
 
 export 'package:video_player_platform_interface/video_player_platform_interface.dart'
     show DurationRange, DataSourceType, VideoFormat, VideoPlayerOptions;
@@ -172,6 +173,7 @@ class CachedVideoPlayerValue extends VideoPlayerValue {
     double? playbackSpeed,
     int? rotationCorrection,
     String? errorDescription = _defaultErrorDescription,
+    bool? isCompleted,
   }) {
     return CachedVideoPlayerValue(
       duration: duration ?? this.duration,
@@ -418,6 +420,7 @@ class CachedVideoPlayerController
           break;
         case VideoEventType.unknown:
           break;
+        default:
       }
     }
 
