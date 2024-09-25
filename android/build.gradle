@@ -9,7 +9,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.2.1'
+        classpath 'com.android.tools.build:gradle:8.5.0'
     }
 }
 
@@ -27,7 +27,11 @@ project.getTasks().withType(JavaCompile){
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 31
+    if (project.android.hasProperty("namespace")) {
+        namespace 'com.loco.video_cached_player'
+    }
+
+    compileSdkVersion 34
 
     defaultConfig {
         minSdkVersion 16
