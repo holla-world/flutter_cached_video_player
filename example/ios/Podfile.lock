@@ -1,25 +1,23 @@
 PODS:
   - CocoaAsyncSocket (7.6.5)
   - Flutter (1.0.0)
-  - KTVCocoaHTTPServer (1.0.0):
+  - KTVHTTPCache (3.0.2):
     - CocoaAsyncSocket
-  - KTVHTTPCache (2.0.1):
-    - KTVCocoaHTTPServer
   - video_cached_player (0.0.2):
     - Flutter
-    - KTVHTTPCache (~> 2.0.0)
+    - KTVHTTPCache (~> 3.0.0)
   - video_player_avfoundation (0.0.1):
     - Flutter
+    - FlutterMacOS
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
   - video_cached_player (from `.symlinks/plugins/video_cached_player/ios`)
-  - video_player_avfoundation (from `.symlinks/plugins/video_player_avfoundation/ios`)
+  - video_player_avfoundation (from `.symlinks/plugins/video_player_avfoundation/darwin`)
 
 SPEC REPOS:
   trunk:
     - CocoaAsyncSocket
-    - KTVCocoaHTTPServer
     - KTVHTTPCache
 
 EXTERNAL SOURCES:
@@ -28,16 +26,15 @@ EXTERNAL SOURCES:
   video_cached_player:
     :path: ".symlinks/plugins/video_cached_player/ios"
   video_player_avfoundation:
-    :path: ".symlinks/plugins/video_player_avfoundation/ios"
+    :path: ".symlinks/plugins/video_player_avfoundation/darwin"
 
 SPEC CHECKSUMS:
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
-  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
-  KTVCocoaHTTPServer: df8d7b861e603ff8037e9b2138aca2563a6b768d
-  KTVHTTPCache: 588c3eb16f6bd1e6fde1e230dabfb7bd4e490a4d
-  video_cached_player: aea115f8ea1b7649465e9bd401f6850f06a6c13b
-  video_player_avfoundation: e489aac24ef5cf7af82702979ed16f2a5ef84cff
+  Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
+  KTVHTTPCache: 5711692cdf9a5ecfe829b1e16577deb3ffe3dc86
+  video_cached_player: bab98ebb5f59b6728c6675d08a07541fdf8f5a04
+  video_player_avfoundation: 7c6c11d8470e1675df7397027218274b6d2360b3
 
-PODFILE CHECKSUM: ef19549a9bc3046e7bb7d2fab4d021637c0c58a3
+PODFILE CHECKSUM: c4c93c5f6502fe2754f48404d3594bf779584011
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.16.2

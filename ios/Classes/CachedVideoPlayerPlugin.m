@@ -533,8 +533,13 @@ static inline CGFloat radiansToDegrees(CGFloat radians) {
     return [self onPlayerSetup:player frameUpdater:frameUpdater];
   } else if (input.uri) {
     // player = [[CachedVideoPlayer alloc] initWithURL:[NSURL URLWithString:input.uri]
-    NSURL *proxyURL = [KTVHTTPCache proxyURLWithOriginalURL:[NSURL URLWithString:input.uri]];
-    player = [[CachedVideoPlayer alloc] initWithURL:proxyURL
+    NSURL *usedURL = [NSURL URLWithString:input.uri];
+    if(![input.formatHint isEqual: @"hls"]) {
+      usedURL = [KTVHTTPCache proxyURLWithOriginalURL:usedURL];
+      [KTVHTTPCache downloadSetAdditionalHeaders:input.httpHeaders];
+    }
+
+    player = [[CachedVideoPlayer alloc] initWithURL:usedURL
                                     frameUpdater:frameUpdater
                                      httpHeaders:input.httpHeaders];
     return [self onPlayerSetup:player frameUpdater:frameUpdater];
