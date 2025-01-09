@@ -1,6 +1,6 @@
 group 'io.flutter.plugins.videoplayer'
 version '1.0-SNAPSHOT'
-def args = ["-Xlint:deprecation","-Xlint:unchecked","-Werror"]
+def args = ["-Xlint:deprecation", "-Xlint:unchecked", "-Werror"]
 
 buildscript {
     repositories {
@@ -20,11 +20,12 @@ rootProject.allprojects {
     }
 }
 
-project.getTasks().withType(JavaCompile){
+project.getTasks().withType(JavaCompile) {
     options.compilerArgs.addAll(args)
 }
 
 apply plugin: 'com.android.library'
+
 
 android {
     if (project.android.hasProperty("namespace")) {
@@ -34,7 +35,7 @@ android {
     compileSdkVersion 34
 
     defaultConfig {
-        minSdkVersion 21
+        minSdkVersion 16
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     lintOptions {
